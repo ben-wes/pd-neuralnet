@@ -1,6 +1,6 @@
 #N canvas 924 540 499 323 10;
 #X obj 62 173 output~;
-#N canvas 1280 236 693 699 autoencoder~ 0;
+#N canvas 1280 236 693 699 autoencoder~ 1;
 #X obj 31 645 outlet~;
 #X obj 30 205 t b a;
 #X obj 30 230 del 100;
@@ -22,7 +22,6 @@
 #X text 27 23 At the bottom part of this subpatch there are three [neuralnet~] objects. One is the whole autoencoder \, and the other two are the encoder and decoder \, separately. The connections between the two are the latent space of the autoencoder.;
 #X msg 30 180 open recordings/\$1;
 #X text 28 105 choose an audio file (you must have a "recordings" directory inside the "examples" directory);
-#X msg 161 191 open recordings/3dPdsessions/from_audacity/session1.wav;
 #X connect 1 0 2 0;
 #X connect 1 1 4 0;
 #X connect 2 0 3 0;
@@ -71,7 +70,6 @@
 #X connect 16 30 15 30;
 #X connect 16 31 15 31;
 #X connect 19 0 1 0;
-#X connect 21 0 1 0;
 #X restore 62 128 pd autoencoder~;
 #X text 59 28 This example uses the audio-rate version \, [neuralnet~] \, to load a saved autoencoder model. As with example 6 \, [neuralnet] must be in a subpatch \, so the block size can be set to the number of inputs and outputs of the autoencoder. Open the [pd autoencoder~] subpatch for details.;
 #X connect 1 0 0 0;
