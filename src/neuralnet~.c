@@ -550,11 +550,11 @@ static t_float softmax_forward(t_neuralnet_tilde *x, int input_size, int index, 
 				/* no need to call set_vec_val() here either, we're also
 				   outputting out the last outlet, so the whole thing
 				   is different in this case */
-				SETFLOAT(listvec, (t_float)max_ndx);
-				listvec++;
-				SETFLOAT(listvec, act_output[i][max_ndx]);
-				outlet_anything(x->x_outlist, gensym("non_conf"), 2, x->x_listvec);
-				out_size = 0.0;
+				//SETFLOAT(listvec, (t_float)max_ndx);
+				//listvec++;
+				//SETFLOAT(listvec, act_output[i][max_ndx]);
+				//outlet_anything(x->x_outlist, gensym("non_conf"), 2, x->x_listvec);
+				//out_size = 0.0;
 			}
 		}
 	}
@@ -1626,7 +1626,7 @@ static void neuralnet_tilde_free(t_neuralnet_tilde *x)
 	dealloc_train_mem(x, x->x_num_in_samples);
 	freebytes(x->x_in, x->x_ninlets * sizeof(t_sample *));
 	freebytes(x->x_out, x->x_noutlets * sizeof(t_sample *));
-	if (!x->x_is_encoder && !x->x_is_decoder) outlet_free(x->x_outlist);
+	//if (!x->x_is_encoder && !x->x_is_decoder) outlet_free(x->x_outlist);
 	clock_free(x->x_train_clock);
 	clock_free(x->x_morph_clock);
 }
@@ -1857,11 +1857,11 @@ static void forward_pass(t_neuralnet_tilde *x)
 				x->x_prev_loss = x->x_loss;
 			}
 		}
-		SETFLOAT(listvec, x->x_loss);
-		outlet_anything(x->x_outlist, gensym("loss"), 1, x->x_listvec);
+		//SETFLOAT(listvec, x->x_loss);
+		//outlet_anything(x->x_outlist, gensym("loss"), 1, x->x_listvec);
 		listvec = x->x_listvec; /* reset the pointer position */
-		SETFLOAT(listvec, x->x_accuracy);
-		outlet_anything(x->x_outlist, gensym("accuracy"), 1, x->x_listvec);
+		//SETFLOAT(listvec, x->x_accuracy);
+		//outlet_anything(x->x_outlist, gensym("accuracy"), 1, x->x_listvec);
 	}
 }
 
@@ -1934,8 +1934,8 @@ static void train_net(t_neuralnet_tilde *x)
 						}
 					}
 				}
-				SETFLOAT(listvec, (t_float)x->x_batch_count);
-				outlet_anything(x->x_outlist, gensym("batch"), 1, x->x_listvec);
+				//SETFLOAT(listvec, (t_float)x->x_batch_count);
+				//outlet_anything(x->x_outlist, gensym("batch"), 1, x->x_listvec);
 			}
 		}
 		else if (x->x_batch_count >= x->x_batch_steps) {
@@ -1947,8 +1947,8 @@ static void train_net(t_neuralnet_tilde *x)
 				/*pause_training(x);*/
 				x->x_num_in_samples = x->x_batch_size;
 			}
-			SETFLOAT(listvec, (t_float)x->x_epoch_count);
-			outlet_anything(x->x_outlist, gensym("epoch"), 1, x->x_listvec);
+			//SETFLOAT(listvec, (t_float)x->x_epoch_count);
+			//outlet_anything(x->x_outlist, gensym("epoch"), 1, x->x_listvec);
 		}
 		/* small delay to avoid freezing Pd */
 		clock_delay(x->x_train_clock, x->x_train_del);
@@ -4658,7 +4658,7 @@ static void *neuralnet_tilde_new(t_symbol *s, int argc, t_atom *argv)
 	for (i = 0; i < noutlets; i++) {
 		outlet_new(&x->obj, &s_signal);
 	}
-	if (!x->x_is_encoder && !x->x_is_decoder) x->x_outlist = outlet_new(&x->obj, 0);
+	//if (!x->x_is_encoder && !x->x_is_decoder) x->x_outlist = outlet_new(&x->obj, 0);
 	x->x_in = (t_sample **)getbytes(ninlets * sizeof(t_sample *));
 	x->x_out = (t_sample **)getbytes(noutlets * sizeof(t_sample *));
 	x->x_train_clock = clock_new(x, (t_method)train_net);
