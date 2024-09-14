@@ -1,5 +1,5 @@
 # neuralnet
-Version 0.2
+Version 0.3
 ## An Artificial Neural Network framework for Pure Data
 [neuralnet] is an artificial neural network Pd external, written in pure C, without any dependencies. It is inspired by the book "Neural Networks from Scratch in Python" by Harrison Kinsley & Daniel Kukieła. It is an attempt to translate the Python code to C with the Pure Data API, to run neural networks within Pd.
 
@@ -35,6 +35,9 @@ If you mention this object in an academic paper/chapter/article, please include 
 ```
 
 Log:<br />
--Fixes crash on Windows with the set_activation_function() message that took A_FLOAT and A_SYMBOL as arguments, which apparently in Windows is not possible.
+- Added four new activation functions
+- Added the ability to access the inner structure of a network (e.g. the latent space)
+- Created an audio autoencoder example
+- Added a signal-rate version of the object
 
 Written by Alexandros Drymonitis
