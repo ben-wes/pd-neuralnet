@@ -1,4 +1,4 @@
-# Makefile for neural
+# Makefile for neuralnet
 
 lib.name = neuralnet
 
@@ -9,8 +9,14 @@ cflags = -g -Wno-cast-function-type
 
 datafiles = neuralnet-help.pd neuralnet~-help.pd README.md
 
-PDLIBBUILDER_DIR=./pd-lib-builder/
-include $(PDLIBBUILDER_DIR)/Makefile.pdlibbuilder
+# Try to find pd-lib-builder
+PDLIBBUILDER_DIR ?= $(firstword $(wildcard pd-lib-builder) $(wildcard ../pd-lib-builder))
+
+ifneq ($(PDLIBBUILDER_DIR),)
+  include $(PDLIBBUILDER_DIR)/Makefile.pdlibbuilder
+else
+  $(error pd-lib-builder not found. Please specify path)
+endif
 
 # Custom target for installing examples
 install-examples:
