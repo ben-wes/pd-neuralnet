@@ -1,7 +1,7 @@
 name: Build and upload artifacts
 
 env:
-  PD_VERSION: 0.55-1
+  PD_VERSION: 0.55-0
   LIBNAME: neuralnet
 
 on:
