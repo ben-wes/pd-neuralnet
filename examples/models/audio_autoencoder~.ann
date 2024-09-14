@@ -15,17 +15,17 @@
 
 ##activation functions
 #layer-0
-4
+5
 #layer-1
-4
+5
 #layer-2
-2
+4
 #layer-3
-4
+5
 #layer-4
-4
+5
 #layer-5
-2
+4
 
 ##max in values
 #max_val_ndx-0
