@@ -12,6 +12,15 @@ cd ../
 git clone https://github.com/pure-data/pd-lib-builder.git
 cd -
 ```
+If you compile the object from sources, you should also change the following line in the Makefile:
+```
+PDLIBBUILDER_DIR=./pd-lib-builder/
+```
+to (one more dot)
+```
+PDLIBBUILDER_DIR=../pd-lib-builder/
+```
+If you fork this repository and build in GitHub, it should work as is.
 
 ## Note about the examples
 Example 03-mouse_input.pd uses [mousestate] from the Cyclone library, to get the coordinates of the mouse.
