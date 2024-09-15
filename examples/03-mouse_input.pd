@@ -111,10 +111,10 @@
 #X floatatom 85 472 5 0 0 1 epochs - - 0;
 #X floatatom 132 451 10 0 0 1 accuracy - - 0;
 #X floatatom 156 427 10 0 0 1 loss - - 0;
-#X obj 38 641 osc_abs/fm_3 125 0.33001 2.9993 8 4;
-#X obj 353 641 osc_abs/fm_3 125.08 0.33003 2.9992 8 4;
-#X obj 73 755 osc_abs/fm_3 249.89 0.33004 2.9995 8 4;
-#X obj 387 755 osc_abs/fm_3 249.91 0.33006 2.9991 8 4;
+#X obj 38 641 fm_3 125 0.33001 2.9993 8 4;
+#X obj 353 641 fm_3 125.08 0.33003 2.9992 8 4;
+#X obj 73 755 fm_3 249.89 0.33004 2.9995 8 4;
+#X obj 387 755 fm_3 249.91 0.33006 2.9991 8 4;
 #X obj 39 394 neuralnet 2 64 64 20;
 #X obj 39 536 list split 5;
 #X obj 353 536 list split 5;
