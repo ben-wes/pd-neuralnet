@@ -46,6 +46,8 @@ If you mention this object in an academic paper/chapter/article, please include 
 Log:<br />
 - Added four new activation functions
 - Added the ability to access the inner structure of a network (e.g. the latent space)
+- Added the ability to store weights and biases during training
+- Added the ability to automatically save models during training
 - Created an audio autoencoder example
 - Added a signal-rate version of the object
 
