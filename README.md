@@ -40,7 +40,7 @@ Log:<br />
 - Created an audio autoencoder example
 - Added a signal-rate version of the object
 
-Special thanks to Ben Wesch for providing macOS and Windows binaries, IOhannes m zmoelnig and Cristof Ressi, for helping out through Pd's mailing list.
+Special thanks to Ben Wesch for providing macOS and Windows binaries, IOhannes m zmoelnig and Cristof Ressi, for helping out through Pd's mailing list. Dan Wilcox for spotting compiler warnings and typos in the help files.
 
 Written by Alexandros Drymonitis
 
