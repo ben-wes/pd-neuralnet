@@ -15,8 +15,8 @@ cd -
 
 ## Note about the examples
 Example 03-mouse_input.pd uses [mousestate] from the Cyclone library, to get the coordinates of the mouse.
-Example 04-fahion_mnist.pd uses the [command] external, plus some Python scripts (called via [command]).
-Example 05-accelerometer_input.pd uses a mobile app to send accelerometer values via OSC.
+Example 04-mnist_digits.pd uses the [command] external, plus some Python scripts (called via [command]).
+Example 05-audio_autoencoder.pd uses [command], though it is not necessary to use it, see patch for details.
 
 All external objects used in the examples can be installed via the deken plugin (Help->Find externals).
 
@@ -40,4 +40,7 @@ Log:<br />
 - Created an audio autoencoder example
 - Added a signal-rate version of the object
 
+Special thanks to Ben Wesch for providing macOS and Windows binaries, IOhannes m zmoelnig and Cristof Ressi, for helping out through Pd's mailing list.
+
 Written by Alexandros Drymonitis
+
